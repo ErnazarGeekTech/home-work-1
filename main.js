@@ -28,20 +28,7 @@ console.log(arr1[4]);
 
 //4
 function countChar(str, char) {
-    let count = 0;
-    for (let i = 0; i < str.length; i++) {
-      if (str[i] === char) {
-        count++;
-      }
-    }
-    return count;
-  }
-  
-  let str = 'loremipsumdolor';
-  let char = 'o';
-  let charCount = countChar(str, char);
-  
-  console.log(charCount);
-
-  console.log('Chyngyz');
-  
+    const regex = new RegExp(char, 'g');
+    const matches = str.match(regex);
+    return matches ? matches.length : 0;
+}
